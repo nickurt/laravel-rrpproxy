@@ -15,6 +15,14 @@ class Base
     protected $password;
 
     /**
+     * @return Contacts
+     */
+    public function contacts()
+    {
+        return new \nickurt\RrpProxy\Api\Contacts($this);
+    }
+
+    /**
      * @return Domains
      */
     public function domains()
@@ -25,7 +33,6 @@ class Base
     /**
      * @param $params
      * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function request($params)
     {

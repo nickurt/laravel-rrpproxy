@@ -35,10 +35,8 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function boot()
     {
-        $this->loadTranslationsFrom(__DIR__.'/../src/Resources/Lang', 'rrpproxy');
-
         $this->publishes([
-            __DIR__.'/../src/Resources/Lang' => resource_path('lang/vendor/rrpproxy'),
+            __DIR__.'/../config/rrpproxy.php' => config_path('rrpproxy.php')
         ], 'config');
     }
 
