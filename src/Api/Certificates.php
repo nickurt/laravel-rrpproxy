@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class Certificates extends Operator
+class Certificates extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class Certificates extends Operator
      */
     public function addCertificate($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddCertificate'], $params
         ));
     }
@@ -21,7 +21,7 @@ class Certificates extends Operator
      */
     public function checkCertificate($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'CheckCertificate'], $params
         ));
     }
@@ -32,7 +32,7 @@ class Certificates extends Operator
      */
     public function deleteCertificate($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteCertificate'], $params
         ));
     }
@@ -43,7 +43,7 @@ class Certificates extends Operator
      */
     public function getCertificateInfo($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'GetCertificateInfo'], $params
         ));
     }
@@ -54,7 +54,7 @@ class Certificates extends Operator
      */
     public function modifyCertificate($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyCertificate'], $params
         ));
     }
@@ -65,7 +65,7 @@ class Certificates extends Operator
      */
     public function queryCertificateList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryCertificateList'], $params
         ));
     }
@@ -76,7 +76,7 @@ class Certificates extends Operator
      */
     public function reissueCertificate($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ReissueCertificate'], $params
         ));
     }
@@ -87,7 +87,7 @@ class Certificates extends Operator
      */
     public function renewCertificate($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'RenewCertificate'], $params
         ));
     }
@@ -98,7 +98,7 @@ class Certificates extends Operator
      */
     public function statusCertificate($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusCertificate'], $params
         ));
     }

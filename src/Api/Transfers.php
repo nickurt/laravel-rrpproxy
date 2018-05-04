@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class Transfers extends Operator
+class Transfers extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class Transfers extends Operator
      */
     public function activateTransfer($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ActivateTransfer'], $params
         ));
     }
@@ -21,7 +21,7 @@ class Transfers extends Operator
      */
     public function checkDomainTransfer($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'CheckDomainTransfer'], $params
         ));
     }
@@ -32,7 +32,7 @@ class Transfers extends Operator
      */
     public function queryForeignTransferList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryForeignTransferList'], $params
         ));
     }
@@ -43,7 +43,7 @@ class Transfers extends Operator
      */
     public function queryTransferList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryTransferList'], $params
         ));
     }
@@ -54,7 +54,7 @@ class Transfers extends Operator
      */
     public function setAuthCode($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'SetAuthCode'], $params
         ));
     }
@@ -65,7 +65,7 @@ class Transfers extends Operator
      */
     public function statusDomainTransfer($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusDomainTransfer'], $params
         ));
     }
@@ -76,7 +76,7 @@ class Transfers extends Operator
      */
     public function transferDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'TransferDomain'], $params
         ));
     }

@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class Account extends Operator
+class Account extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class Account extends Operator
      */
     public function activateAppendix($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ActivateAppendix'], $params
         ));
     }
@@ -21,7 +21,7 @@ class Account extends Operator
      */
     public function modifyRegistrar($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyRegistrar'], $params
         ));
     }
@@ -32,7 +32,7 @@ class Account extends Operator
      */
     public function modifyRegistrarCurrency($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyRegistrarCurrency'], $params
         ));
     }
@@ -43,7 +43,7 @@ class Account extends Operator
      */
     public function pushObject($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'PushObject'], $params
         ));
     }
@@ -54,7 +54,7 @@ class Account extends Operator
      */
     public function queryAppendixList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryAppendixList'], $params
         ));
     }
@@ -65,7 +65,7 @@ class Account extends Operator
      */
     public function queryRegistrarStatisticList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryRegistrarStatisticList'], $params
         ));
     }
@@ -76,7 +76,7 @@ class Account extends Operator
      */
     public function statusAccount($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusAccount'], $params
         ));
     }
@@ -87,7 +87,7 @@ class Account extends Operator
      */
     public function statusRegistrar($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusRegistrar'], $params
         ));
     }

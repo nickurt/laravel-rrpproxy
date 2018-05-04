@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class Trademarks extends Operator
+class Trademarks extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class Trademarks extends Operator
      */
     public function addTrademark($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddTrademark'], $params
         ));
     }
@@ -21,7 +21,7 @@ class Trademarks extends Operator
      */
     public function deleteTrademark($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteTrademark'], $params
         ));
     }
@@ -32,7 +32,7 @@ class Trademarks extends Operator
      */
     public function getTrademarkLabels($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'GetTrademarkLabels'], $params
         ));
     }
@@ -43,7 +43,7 @@ class Trademarks extends Operator
      */
     public function modifyTrademark($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyTrademark'], $params
         ));
     }
@@ -54,7 +54,7 @@ class Trademarks extends Operator
      */
     public function queryTrademarkList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryTrademarkList'], $params
         ));
     }
@@ -65,7 +65,7 @@ class Trademarks extends Operator
      */
     public function renewTrademark($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'RenewTrademark'], $params
         ));
     }
@@ -76,7 +76,7 @@ class Trademarks extends Operator
      */
     public function setTrademarkRenewalmode($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'SetTrademarkRenewalmode'], $params
         ));
     }
@@ -87,7 +87,7 @@ class Trademarks extends Operator
      */
     public function statusTrademark($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusTrademark'], $params
         ));
     }
@@ -98,7 +98,7 @@ class Trademarks extends Operator
      */
     public function transferTrademark($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'TransferTrademark'], $params
         ));
     }

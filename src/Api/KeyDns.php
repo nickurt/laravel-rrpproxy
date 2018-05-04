@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class KeyDns extends Operator
+class KeyDns extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class KeyDns extends Operator
      */
     public function addDnsZone($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddDNSZone'], $params
         ));
     }
@@ -21,7 +21,7 @@ class KeyDns extends Operator
      */
     public function addMailFwd($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddMailFwd'], $params
         ));
     }
@@ -32,7 +32,7 @@ class KeyDns extends Operator
      */
     public function addWebFwd($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddWebFwd'], $params
         ));
     }
@@ -43,7 +43,7 @@ class KeyDns extends Operator
      */
     public function checkDnsZone($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'CheckDNSZone'], $params
         ));
     }
@@ -54,7 +54,7 @@ class KeyDns extends Operator
      */
     public function deleteDnsZone($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteDNSZone'], $params
         ));
     }
@@ -65,7 +65,7 @@ class KeyDns extends Operator
      */
     public function deleteMailFwd($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteMailFwd'], $params
         ));
     }
@@ -76,7 +76,7 @@ class KeyDns extends Operator
      */
     public function deleteWebFwd($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteWebFwd'], $params
         ));
     }
@@ -87,7 +87,7 @@ class KeyDns extends Operator
      */
     public function exportDnsZone($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ExportDNSZone'], $params
         ));
     }
@@ -98,7 +98,7 @@ class KeyDns extends Operator
      */
     public function getDnsZone($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'GetDNSZone'], $params
         ));
     }
@@ -109,7 +109,7 @@ class KeyDns extends Operator
      */
     public function importDnsZone($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ImportDNSZone'], $params
         ));
     }
@@ -120,7 +120,7 @@ class KeyDns extends Operator
      */
     public function modifyDnsZone($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyDNSZone'], $params
         ));
     }
@@ -131,7 +131,7 @@ class KeyDns extends Operator
      */
     public function queryDnsZoneList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryDNSZoneList'], $params
         ));
     }
@@ -142,7 +142,7 @@ class KeyDns extends Operator
      */
     public function queryDnsZoneRRList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryDNSZoneRRList'], $params
         ));
     }
@@ -153,7 +153,7 @@ class KeyDns extends Operator
      */
     public function queryDnsZoneSubdomainList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryDNSZoneSubdomainList'], $params
         ));
     }
@@ -164,7 +164,7 @@ class KeyDns extends Operator
      */
     public function queryMailFwdList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryMailFwdList'], $params
         ));
     }
@@ -175,7 +175,7 @@ class KeyDns extends Operator
      */
     public function queryWebFwdList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryWebFwdList'], $params
         ));
     }
@@ -186,7 +186,7 @@ class KeyDns extends Operator
      */
     public function statusDnsZone($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusDNSZone'], $params
         ));
     }

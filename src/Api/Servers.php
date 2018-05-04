@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class Servers extends Operator
+class Servers extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class Servers extends Operator
      */
     public function addServer($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddServer'], $params
         ));
     }
@@ -21,7 +21,7 @@ class Servers extends Operator
      */
     public function deleteServer($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteServer'], $params
         ));
     }
@@ -32,7 +32,7 @@ class Servers extends Operator
      */
     public function modifyServer($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyServer'], $params
         ));
     }
@@ -43,7 +43,7 @@ class Servers extends Operator
      */
     public function queryServerList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryServerList'], $params
         ));
     }
@@ -54,7 +54,7 @@ class Servers extends Operator
      */
     public function renewServer($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'RenewServer'], $params
         ));
     }
@@ -65,7 +65,7 @@ class Servers extends Operator
      */
     public function statusServer($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusServer'], $params
         ));
     }

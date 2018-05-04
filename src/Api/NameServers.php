@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class NameServers extends Operator
+class NameServers extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class NameServers extends Operator
      */
     public function addNameserver($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddNameserver'], $params
         ));
     }
@@ -21,7 +21,7 @@ class NameServers extends Operator
      */
     public function checkNameserver($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'CheckNameserver'], $params
         ));
     }
@@ -32,7 +32,7 @@ class NameServers extends Operator
      */
     public function deleteNameserver($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteNameserver'], $params
         ));
     }
@@ -43,7 +43,7 @@ class NameServers extends Operator
      */
     public function modifyNameserver($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyNameserver'], $params
         ));
     }
@@ -54,7 +54,7 @@ class NameServers extends Operator
      */
     public function queryNameserverList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryNameserverList'], $params
         ));
     }
@@ -65,7 +65,7 @@ class NameServers extends Operator
      */
     public function statusNameserver($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusNameserver'], $params
         ));
     }

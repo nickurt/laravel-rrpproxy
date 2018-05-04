@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class Application extends Operator
+class Application extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class Application extends Operator
      */
     public function addDomainApplication($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddDomainApplication'], $params
         ));
     }
@@ -21,7 +21,7 @@ class Application extends Operator
      */
     public function deleteDomainApplication($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteDomainApplication'], $params
         ));
     }
@@ -32,7 +32,7 @@ class Application extends Operator
      */
     public function modifyDomainApplication($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyDomainApplication'], $params
         ));
     }
@@ -43,7 +43,7 @@ class Application extends Operator
      */
     public function queryApplicationList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryApplicationList'], $params
         ));
     }
@@ -54,7 +54,7 @@ class Application extends Operator
      */
     public function queryDomainApplicationList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryDomainApplicationList'], $params
         ));
     }
@@ -65,7 +65,7 @@ class Application extends Operator
      */
     public function statusDomainApplication($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusDomainApplication'], $params
         ));
     }

@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class Sms extends Operator
+class Sms extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class Sms extends Operator
      */
     public function chargeMobileAccount($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ChargeMobileAccount'], $params
         ));
     }
@@ -21,7 +21,7 @@ class Sms extends Operator
      */
     public function createMobileAccount($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'CreateMobileAccount'], $params
         ));
     }
@@ -32,7 +32,7 @@ class Sms extends Operator
      */
     public function queryMobileAccountList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryMobileAccountList'], $params
         ));
     }
@@ -43,7 +43,7 @@ class Sms extends Operator
      */
     public function querySMSList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QuerySMSList'], $params
         ));
     }
@@ -54,7 +54,7 @@ class Sms extends Operator
      */
     public function sendSMS($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'SendSMS'], $params
         ));
     }
@@ -65,7 +65,7 @@ class Sms extends Operator
      */
     public function statusMobileAccount($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusMobileAccount'], $params
         ));
     }

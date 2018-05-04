@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class Contacts extends Operator
+class Contacts extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class Contacts extends Operator
      */
     public function addContact($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddContact'], $params
         ));
     }
@@ -21,7 +21,7 @@ class Contacts extends Operator
      */
     public function checkContact($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'CheckContact'], $params
         ));
     }
@@ -32,7 +32,7 @@ class Contacts extends Operator
      */
     public function checkContacts($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'CheckContacts'], $params
         ));
     }
@@ -43,7 +43,7 @@ class Contacts extends Operator
      */
     public function cloneContact($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'CloneContact'], $params
         ));
     }
@@ -54,7 +54,7 @@ class Contacts extends Operator
      */
     public function deleteContact($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteContact'], $params
         ));
     }
@@ -65,7 +65,7 @@ class Contacts extends Operator
      */
     public function modifyContact($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyContact'], $params
         ));
     }
@@ -75,7 +75,7 @@ class Contacts extends Operator
      */
     public function queryContactList()
     {
-        return $this->client->request(['command' => 'QueryContactList']);
+        return $this->request(['command' => 'QueryContactList']);
     }
 
     /**
@@ -84,7 +84,7 @@ class Contacts extends Operator
      */
     public function restoreContact($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'RestoreContact'], $params
         ));
     }
@@ -95,7 +95,7 @@ class Contacts extends Operator
      */
     public function statusContact($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusContact'], $params
         ));
     }
@@ -106,7 +106,7 @@ class Contacts extends Operator
      */
     public function statusOwnerChange($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusOwnerChange'], $params
         ));
     }
@@ -117,7 +117,7 @@ class Contacts extends Operator
      */
     public function statusUnsyncRegistryContact($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusUnsyncRegistryContact'], $params
         ));
     }
@@ -128,7 +128,7 @@ class Contacts extends Operator
      */
     public function transferContact($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'TransferContact'], $params
         ));
     }

@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class Hosting extends Operator
+class Hosting extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class Hosting extends Operator
      */
     public function addWebhost($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddWebhost'], $params
         ));
     }
@@ -21,7 +21,7 @@ class Hosting extends Operator
      */
     public function addWebspace($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddWebspace'], $params
         ));
     }
@@ -32,7 +32,7 @@ class Hosting extends Operator
      */
     public function deleteWebhost($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteWebhost'], $params
         ));
     }
@@ -43,7 +43,7 @@ class Hosting extends Operator
      */
     public function deleteWebspace($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteWebspace'], $params
         ));
     }
@@ -54,7 +54,7 @@ class Hosting extends Operator
      */
     public function modifyPhpIni($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyPHPIni'], $params
         ));
     }
@@ -65,7 +65,7 @@ class Hosting extends Operator
      */
     public function modifyWebhostAutocert($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyWebhost: AUTOCERT'], $params
         ));
     }
@@ -76,7 +76,7 @@ class Hosting extends Operator
      */
     public function modifyWebhostSsl($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyWebhost: SSL'], $params
         ));
     }
@@ -87,7 +87,7 @@ class Hosting extends Operator
      */
     public function modifyWebspace($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyWebspace'], $params
         ));
     }
@@ -98,7 +98,7 @@ class Hosting extends Operator
      */
     public function modifyWhost($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyWhost'], $params
         ));
     }
@@ -109,7 +109,7 @@ class Hosting extends Operator
      */
     public function queryPhpIni($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryPHPIni'], $params
         ));
     }
@@ -120,7 +120,7 @@ class Hosting extends Operator
      */
     public function queryWebhostList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryWebhostList'], $params
         ));
     }
@@ -131,7 +131,7 @@ class Hosting extends Operator
      */
     public function queryWebspaceList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryWebspaceList'], $params
         ));
     }
@@ -142,7 +142,7 @@ class Hosting extends Operator
      */
     public function renewWebspace($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'RenewWebspace'], $params
         ));
     }
@@ -153,7 +153,7 @@ class Hosting extends Operator
      */
     public function statusWebhost($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusWebhost'], $params
         ));
     }
@@ -164,7 +164,7 @@ class Hosting extends Operator
      */
     public function statusWebspace($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusWebspace'], $params
         ));
     }

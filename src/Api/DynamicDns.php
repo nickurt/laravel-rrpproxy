@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class DynamicDns extends Operator
+class DynamicDns extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class DynamicDns extends Operator
      */
     public function addDynamicDns($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddDynamicDNS'], $params
         ));
     }
@@ -21,7 +21,7 @@ class DynamicDns extends Operator
      */
     public function deleteDynamicDns($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteDynamicDNS'], $params
         ));
     }
@@ -32,7 +32,7 @@ class DynamicDns extends Operator
      */
     public function modifyDynamicDns($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyDynamicDNS'], $params
         ));
     }
@@ -43,7 +43,7 @@ class DynamicDns extends Operator
      */
     public function queryDynamicDNSList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryDynamicDNSList'], $params
         ));
     }
@@ -54,7 +54,7 @@ class DynamicDns extends Operator
      */
     public function statusDynamicDns($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusDynamicDNS'], $params
         ));
     }
@@ -65,7 +65,7 @@ class DynamicDns extends Operator
      */
     public function updateDynamicDns($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'UpdateDynamicDNS'], $params
         ));
     }

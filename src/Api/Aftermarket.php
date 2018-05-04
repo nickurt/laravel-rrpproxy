@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class Aftermarket extends Operator
+class Aftermarket extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class Aftermarket extends Operator
      */
     public function addAftermarketAccount($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddAftermarketAccount'], $params
         ));
     }
@@ -21,7 +21,7 @@ class Aftermarket extends Operator
      */
     public function addAftermarketDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddAftermarketDomain'], $params
         ));
     }
@@ -32,7 +32,7 @@ class Aftermarket extends Operator
      */
     public function aftermarketBid($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AftermarketBid'], $params
         ));
     }
@@ -43,7 +43,7 @@ class Aftermarket extends Operator
      */
     public function buyDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'BuyDomain'], $params
         ));
     }
@@ -54,7 +54,7 @@ class Aftermarket extends Operator
      */
     public function deleteAftermarketAccount($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteAftermarketAccount'], $params
         ));
     }
@@ -65,7 +65,7 @@ class Aftermarket extends Operator
      */
     public function deleteAftermarketDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteAftermarketDomain'], $params
         ));
     }
@@ -76,7 +76,7 @@ class Aftermarket extends Operator
      */
     public function modifyAftermarketAccount($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyAftermarketAccount'], $params
         ));
     }
@@ -87,7 +87,7 @@ class Aftermarket extends Operator
      */
     public function modifyAftermarketDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyAftermarketDomain'], $params
         ));
     }
@@ -98,7 +98,7 @@ class Aftermarket extends Operator
      */
     public function queryAftermarketAccountList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryAftermarketAccountList'], $params
         ));
     }
@@ -109,7 +109,7 @@ class Aftermarket extends Operator
      */
     public function queryAftermarketBid($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryAftermarketBid'], $params
         ));
     }
@@ -120,7 +120,7 @@ class Aftermarket extends Operator
      */
     public function queryAftermarketBidList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryAftermarketBidList'], $params
         ));
     }
@@ -131,7 +131,7 @@ class Aftermarket extends Operator
      */
     public function queryAftermarketDomainList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryAftermarketDomainList'], $params
         ));
     }
@@ -142,7 +142,7 @@ class Aftermarket extends Operator
      */
     public function queryAftermarketList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryAftermarketList'], $params
         ));
     }
@@ -153,7 +153,7 @@ class Aftermarket extends Operator
      */
     public function reserveDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ReserveDomain'], $params
         ));
     }
@@ -164,7 +164,7 @@ class Aftermarket extends Operator
      */
     public function statusAftermarketAccount($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusAftermarketAccount'], $params
         ));
     }
@@ -175,7 +175,7 @@ class Aftermarket extends Operator
      */
     public function statusAftermarketDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusAftermarketDomain'], $params
         ));
     }

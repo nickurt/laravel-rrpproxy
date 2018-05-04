@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class Finances extends Operator
+class Finances extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class Finances extends Operator
      */
     public function chargeCreditcard($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ChargeCreditcard'], $params
         ));
     }
@@ -21,7 +21,7 @@ class Finances extends Operator
      */
     public function convertCurrency($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ConvertCurrency'], $params
         ));
     }
@@ -32,7 +32,7 @@ class Finances extends Operator
      */
     public function queryAccountingList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryAccountingList'], $params
         ));
     }
@@ -43,7 +43,7 @@ class Finances extends Operator
      */
     public function queryAvailablePromotionList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryAvailablePromotionList'], $params
         ));
     }
@@ -54,7 +54,7 @@ class Finances extends Operator
      */
     public function queryExchangeRates($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryExchangeRates'], $params
         ));
     }
@@ -65,7 +65,7 @@ class Finances extends Operator
      */
     public function queryPremiumDomainList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryPremiumDomainList'], $params
         ));
     }
@@ -76,7 +76,7 @@ class Finances extends Operator
      */
     public function queryPriceHistoryList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryPriceHistoryList'], $params
         ));
     }
@@ -87,7 +87,7 @@ class Finances extends Operator
      */
     public function queryServiceList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryServiceList'], $params
         ));
     }
@@ -98,7 +98,7 @@ class Finances extends Operator
      */
     public function queryUpcomingAccountingList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryUpcomingAccountingList'], $params
         ));
     }
@@ -109,7 +109,7 @@ class Finances extends Operator
      */
     public function queryZoneList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryZoneList'], $params
         ));
     }
@@ -120,7 +120,7 @@ class Finances extends Operator
      */
     public function servicePrice($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ServicePrice'], $params
         ));
     }

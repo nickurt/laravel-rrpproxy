@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class Queries extends Operator
+class Queries extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class Queries extends Operator
      */
     public function generateList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'GenerateList'], $params
         ));
     }
@@ -21,7 +21,7 @@ class Queries extends Operator
      */
     public function queryCommandSyntax($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryCommandSyntax'], $params
         ));
     }
@@ -32,7 +32,7 @@ class Queries extends Operator
      */
     public function queryDomainPinLockList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryDomainPinLockList'], $params
         ));
     }
@@ -43,7 +43,7 @@ class Queries extends Operator
      */
     public function queryJobList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryJobList'], $params
         ));
     }
@@ -54,7 +54,7 @@ class Queries extends Operator
      */
     public function queryMonitoringList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryMonitoringList'], $params
         ));
     }
@@ -65,7 +65,7 @@ class Queries extends Operator
      */
     public function queryObjectLogList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryObjectLogList'], $params
         ));
     }
@@ -76,7 +76,7 @@ class Queries extends Operator
      */
     public function queryOwnerChangeList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryOwnerChangeList'], $params
         ));
     }
@@ -87,7 +87,7 @@ class Queries extends Operator
      */
     public function queryPriceScaleList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryPriceScaleList'], $params
         ));
     }
@@ -98,7 +98,7 @@ class Queries extends Operator
      */
     public function queryPromotionList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryPromotionList'], $params
         ));
     }
@@ -109,7 +109,7 @@ class Queries extends Operator
      */
     public function queryPromotionRegistrarList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryPromotionRegistrarList'], $params
         ));
     }
@@ -120,7 +120,7 @@ class Queries extends Operator
      */
     public function queryRegistrarCommentList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryRegistrarCommentList'], $params
         ));
     }
@@ -131,7 +131,7 @@ class Queries extends Operator
      */
     public function queryRegistrarList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryRegistrarList'], $params
         ));
     }
@@ -142,7 +142,7 @@ class Queries extends Operator
      */
     public function queryTrusteeLogList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryTrusteeLogList'], $params
         ));
     }
@@ -153,7 +153,7 @@ class Queries extends Operator
      */
     public function queryZonePriceList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryZonePriceList'], $params
         ));
     }
@@ -164,7 +164,7 @@ class Queries extends Operator
      */
     public function statusObjectLog($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusObjectLog'], $params
         ));
     }

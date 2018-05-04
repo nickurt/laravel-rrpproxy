@@ -2,7 +2,7 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class Domains extends Operator
+class Domains extends AbstractApi
 {
     /**
      * @param $params
@@ -10,7 +10,7 @@ class Domains extends Operator
      */
     public function activateClaimsNotice($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ActivateClaimsNotice'], $params
         ));
     }
@@ -21,7 +21,7 @@ class Domains extends Operator
      */
     public function addDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'AddDomain'], $params
         ));
     }
@@ -32,7 +32,7 @@ class Domains extends Operator
      */
     public function checkClaims($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'CheckClaims'], $params
         ));
     }
@@ -43,7 +43,7 @@ class Domains extends Operator
      */
     public function checkDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'CheckDomain'], $params
         ));
     }
@@ -54,7 +54,7 @@ class Domains extends Operator
      */
     public function checkDomains($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'CheckDomains'], $params
         ));
     }
@@ -65,7 +65,7 @@ class Domains extends Operator
      */
     public function deleteDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DeleteDomain'], $params
         ));
     }
@@ -76,7 +76,7 @@ class Domains extends Operator
      */
     public function domainPrice($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'DomainPrice'], $params
         ));
     }
@@ -87,7 +87,7 @@ class Domains extends Operator
      */
     public function getZone($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'GetZone'], $params
         ));
     }
@@ -98,7 +98,7 @@ class Domains extends Operator
      */
     public function getZoneInfo($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'GetZoneInfo'], $params
         ));
     }
@@ -109,7 +109,7 @@ class Domains extends Operator
      */
     public function modifyDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ModifyDomain'], $params
         ));
     }
@@ -120,7 +120,7 @@ class Domains extends Operator
      */
     public function parkDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ParkDomain'], $params
         ));
     }
@@ -131,7 +131,7 @@ class Domains extends Operator
      */
     public function pushDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'PushDomain'], $params
         ));
     }
@@ -142,7 +142,7 @@ class Domains extends Operator
      */
     public function queryActiveServiceList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryActiveServiceList'], $params
         ));
     }
@@ -153,7 +153,7 @@ class Domains extends Operator
      */
     public function queryClaimsNoticeList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryClaimsNoticeList'], $params
         ));
     }
@@ -164,7 +164,7 @@ class Domains extends Operator
      */
     public function queryDomainExpireList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryDomainExpireList'], $params
         ));
     }
@@ -175,7 +175,7 @@ class Domains extends Operator
      */
     public function queryDomainHistoryList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryDomainHistoryList'], $params
         ));
     }
@@ -185,7 +185,7 @@ class Domains extends Operator
      */
     public function queryDomainList()
     {
-        return $this->client->request(['command' => 'QueryDomainList']);
+        return $this->request(['command' => 'QueryDomainList']);
     }
 
     /**
@@ -194,7 +194,7 @@ class Domains extends Operator
      */
     public function queryDomainListByContact($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryDomainListByContact'], $params
         ));
     }
@@ -205,7 +205,7 @@ class Domains extends Operator
      */
     public function queryDomainRenewList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryDomainRenewList'], $params
         ));
     }
@@ -216,7 +216,7 @@ class Domains extends Operator
      */
     public function queryIDNTagList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryIDNTagList'], $params
         ));
     }
@@ -227,7 +227,7 @@ class Domains extends Operator
      */
     public function queryRegisteredPremiumDomainList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryRegisteredPremiumDomainList'], $params
         ));
     }
@@ -238,7 +238,7 @@ class Domains extends Operator
      */
     public function queryTrusteeDomainList($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'QueryTrusteeDomainList'], $params
         ));
     }
@@ -249,7 +249,7 @@ class Domains extends Operator
      */
     public function renewDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'RenewDomain'], $params
         ));
     }
@@ -260,7 +260,7 @@ class Domains extends Operator
      */
     public function requestDomainPin($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'RequestDomainPin'], $params
         ));
     }
@@ -271,7 +271,7 @@ class Domains extends Operator
      */
     public function resendNotification($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'ResendNotification'], $params
         ));
     }
@@ -282,7 +282,7 @@ class Domains extends Operator
      */
     public function restoreDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'RestoreDomain'], $params
         ));
     }
@@ -293,7 +293,7 @@ class Domains extends Operator
      */
     public function setDomainPinLock($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'SetDomainPinLock'], $params
         ));
     }
@@ -304,7 +304,7 @@ class Domains extends Operator
      */
     public function setDomainRenewalMode($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'SetDomainRenewalMode'], $params
         ));
     }
@@ -315,7 +315,7 @@ class Domains extends Operator
      */
     public function setDomainTransferMode($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'SetDomainTransferMode'], $params
         ));
     }
@@ -326,7 +326,7 @@ class Domains extends Operator
      */
     public function statusClaimsNotice($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusClaimsNotice'], $params
         ));
     }
@@ -337,7 +337,7 @@ class Domains extends Operator
      */
     public function statusDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusDomain'], $params
         ));
     }
@@ -348,7 +348,7 @@ class Domains extends Operator
      */
     public function statusDomainHistory($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'StatusDomainHistory'], $params
         ));
     }
@@ -359,7 +359,7 @@ class Domains extends Operator
      */
     public function tradeDomain($params)
     {
-        return $this->client->request(array_merge(
+        return $this->request(array_merge(
             ['command' => 'TradeDomain'], $params
         ));
     }
