@@ -2,16 +2,16 @@
 
 namespace nickurt\RrpProxy\Api;
 
-class Contacts extends Operator
+class Finances extends Operator
 {
     /**
      * @param $params
      * @return mixed
      */
-    public function addContact($params)
+    public function chargeCreditcard($params)
     {
         return $this->client->request(array_merge(
-            ['command' => 'AddContact'], $params
+            ['command' => 'ChargeCreditcard'], $params
         ));
     }
 
@@ -19,10 +19,10 @@ class Contacts extends Operator
      * @param $params
      * @return mixed
      */
-    public function checkContact($params)
+    public function convertCurrency($params)
     {
         return $this->client->request(array_merge(
-            ['command' => 'CheckContact'], $params
+            ['command' => 'ConvertCurrency'], $params
         ));
     }
 
@@ -30,10 +30,10 @@ class Contacts extends Operator
      * @param $params
      * @return mixed
      */
-    public function checkContacts($params)
+    public function queryAccountingList($params)
     {
         return $this->client->request(array_merge(
-            ['command' => 'CheckContacts'], $params
+            ['command' => 'QueryAccountingList'], $params
         ));
     }
 
@@ -41,10 +41,10 @@ class Contacts extends Operator
      * @param $params
      * @return mixed
      */
-    public function cloneContact($params)
+    public function queryAvailablePromotionList($params)
     {
         return $this->client->request(array_merge(
-            ['command' => 'CloneContact'], $params
+            ['command' => 'QueryAvailablePromotionList'], $params
         ));
     }
 
@@ -52,10 +52,10 @@ class Contacts extends Operator
      * @param $params
      * @return mixed
      */
-    public function deleteContact($params)
+    public function queryExchangeRates($params)
     {
         return $this->client->request(array_merge(
-            ['command' => 'DeleteContact'], $params
+            ['command' => 'QueryExchangeRates'], $params
         ));
     }
 
@@ -63,29 +63,10 @@ class Contacts extends Operator
      * @param $params
      * @return mixed
      */
-    public function modifyContact($params)
+    public function queryPremiumDomainList($params)
     {
         return $this->client->request(array_merge(
-            ['command' => 'ModifyContact'], $params
-        ));
-    }
-
-    /**
-     * @return mixed
-     */
-    public function queryContactList()
-    {
-        return $this->client->request(['command' => 'QueryContactList']);
-    }
-
-    /**
-     * @param $params
-     * @return mixed
-     */
-    public function restoreContact($params)
-    {
-        return $this->client->request(array_merge(
-            ['command' => 'RestoreContact'], $params
+            ['command' => 'QueryPremiumDomainList'], $params
         ));
     }
 
@@ -93,10 +74,10 @@ class Contacts extends Operator
      * @param $params
      * @return mixed
      */
-    public function statusContact($params)
+    public function queryPriceHistoryList($params)
     {
         return $this->client->request(array_merge(
-            ['command' => 'StatusContact'], $params
+            ['command' => 'QueryPriceHistoryList'], $params
         ));
     }
 
@@ -104,10 +85,10 @@ class Contacts extends Operator
      * @param $params
      * @return mixed
      */
-    public function statusOwnerChange($params)
+    public function queryServiceList($params)
     {
         return $this->client->request(array_merge(
-            ['command' => 'StatusOwnerChange'], $params
+            ['command' => 'QueryServiceList'], $params
         ));
     }
 
@@ -115,10 +96,10 @@ class Contacts extends Operator
      * @param $params
      * @return mixed
      */
-    public function statusUnsyncRegistryContact($params)
+    public function queryUpcomingAccountingList($params)
     {
         return $this->client->request(array_merge(
-            ['command' => 'StatusUnsyncRegistryContact'], $params
+            ['command' => 'QueryUpcomingAccountingList'], $params
         ));
     }
 
@@ -126,10 +107,21 @@ class Contacts extends Operator
      * @param $params
      * @return mixed
      */
-    public function transferContact($params)
+    public function queryZoneList($params)
     {
         return $this->client->request(array_merge(
-            ['command' => 'TransferContact'], $params
+            ['command' => 'QueryZoneList'], $params
+        ));
+    }
+
+    /**
+     * @param $params
+     * @return mixed
+     */
+    public function servicePrice($params)
+    {
+        return $this->client->request(array_merge(
+            ['command' => 'ServicePrice'], $params
         ));
     }
 }
