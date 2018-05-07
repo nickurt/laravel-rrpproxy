@@ -73,9 +73,11 @@ class Contacts extends AbstractApi
     /**
      * @return mixed
      */
-    public function queryContactList()
+    public function queryContactList($params)
     {
-        return $this->request(['command' => 'QueryContactList']);
+        return $this->request(array_merge(
+            ['command' => 'QueryContactList'], $params
+        ));
     }
 
     /**

@@ -183,9 +183,11 @@ class Domains extends AbstractApi
     /**
      * @return mixed
      */
-    public function queryDomainList()
+    public function queryDomainList($params)
     {
-        return $this->request(['command' => 'QueryDomainList']);
+        return $this->request(array_merge(
+            ['command' => 'QueryDomainList'], $params
+        ));
     }
 
     /**
