@@ -12,6 +12,13 @@ return [
             'password' => env('RRPPROXY_DEFAULT_PASSWORD'),
         ],
 
+        'otae' => [
+            'host' => env('RRPPROXY_DEFAULT_HOST'),
+            'username' => env('RRPPROXY_DEFAULT_USERNAME'),
+            'password' => env('RRPPROXY_DEFAULT_PASSWORD'),
+            'otae' => true,
+        ],
+
     ],
 
 ];

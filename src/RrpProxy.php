@@ -79,6 +79,7 @@ class RrpProxy
             $config['username'],
             $config['password']
         );
+        $this->client->setEnvironment(isset($config['otae']) ? 'otae' : 'live');
 
         return $this->client;
     }
