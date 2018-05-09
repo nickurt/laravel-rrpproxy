@@ -3,36 +3,51 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Tests](#tests)
-
 ### Installation
 Install this package with composer:
 ```
 composer require nickurt/laravel-rrpproxy:1.*
 ```
-
 Add the provider to config/app.php file
-
 ```php
 'nickurt\RrpProxy\ServiceProvider',
 ```
-
 and the facade in the file
-
 ```php
 'RrpProxy' => 'nickurt\RrpProxy\Facade',
 ```
-
 Copy the config files for the RrpProxy-plugin
-
 ```
 php artisan vendor:publish --provider="nickurt\RrpProxy\ServiceProvider" --tag="config"
 ```
-Add the rrpproxy credentials to your .env file
+Add the RrpProxy credentials to your .env file
 ```
 RRPPROXY_DEFAULT_USERNAME=
 RRPPROXY_DEFAULT_PASSWORD=
 ```
 ### Usage
+#### Dependency injection [e.g. by using multiple connections]
+```php
+// Route
+Route::get('/rrpproxy/{rrpproxy}/customers', ['as' => 'rrpproxy/customers', 'uses' => 'CustomersController@getIndex']);
+
+Route::bind('rrpproxy', function ($value, $route) {
+    app('RrpProxy')->connection($value);
+
+    return app('RrpProxy');
+});
+
+// CustomersController
+public function getIndex(RrpProxy $rrpProxy)
+{
+    $customers = $rrpProxy->contacts()->queryContactList([
+        'limit' => 20,
+        'wide' => 1,
+    ]);
+
+    //
+}
+```
 #### Account
 ```php
 \RrpProxy::account()->activateAppendix(array $params)
@@ -184,23 +199,23 @@ RRPPROXY_DEFAULT_PASSWORD=
 ```
 #### Key DNS
 ```php
-\RrpProxy::keydns()->addDnsZone($params)
-\RrpProxy::keydns()->addMailFwd($params)
-\RrpProxy::keydns()->addWebFwd($params)
-\RrpProxy::keydns()->checkDnsZone($params)
-\RrpProxy::keydns()->deleteDnsZone($params)
-\RrpProxy::keydns()->deleteMailFwd($params)
-\RrpProxy::keydns()->deleteWebFwd($params)
-\RrpProxy::keydns()->exportDnsZone($params)
-\RrpProxy::keydns()->getDnsZone($params)
-\RrpProxy::keydns()->importDnsZone($params)
-\RrpProxy::keydns()->modifyDnsZone($params)
-\RrpProxy::keydns()->queryDnsZoneList($params)
-\RrpProxy::keydns()->queryDnsZoneRRList($params)
-\RrpProxy::keydns()->queryDnsZoneSubdomainList($params)
-\RrpProxy::keydns()->queryMailFwdList($params)
-\RrpProxy::keydns()->queryWebFwdList($params)
-\RrpProxy::keydns()->statusDnsZone($params)
+\RrpProxy::keydns()->addDnsZone(array $params)
+\RrpProxy::keydns()->addMailFwd(array $params)
+\RrpProxy::keydns()->addWebFwd(array $params)
+\RrpProxy::keydns()->checkDnsZone(array $params)
+\RrpProxy::keydns()->deleteDnsZone(array $params)
+\RrpProxy::keydns()->deleteMailFwd(array $params)
+\RrpProxy::keydns()->deleteWebFwd(array $params)
+\RrpProxy::keydns()->exportDnsZone(array $params)
+\RrpProxy::keydns()->getDnsZone(array $params)
+\RrpProxy::keydns()->importDnsZone(array $params)
+\RrpProxy::keydns()->modifyDnsZone(array $params)
+\RrpProxy::keydns()->queryDnsZoneList(array $params)
+\RrpProxy::keydns()->queryDnsZoneRRList(array $params)
+\RrpProxy::keydns()->queryDnsZoneSubdomainList(array $params)
+\RrpProxy::keydns()->queryMailFwdList(array $params)
+\RrpProxy::keydns()->queryWebFwdList(array $params)
+\RrpProxy::keydns()->statusDnsZone(array $params)
 ```
 #### NameServers
 ```php
