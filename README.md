@@ -6,7 +6,7 @@
 ### Installation
 Install this package with composer:
 ```
-composer require nickurt/laravel-rrpproxy:1.*
+composer require nickurt/laravel-rrpproxy
 ```
 Add the provider to config/app.php file
 ```php
