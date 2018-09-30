@@ -53,9 +53,10 @@ class SoapClient implements SoapClientInterface
     {
         $this->client->__setLocation($this->getOptions()['location']);
 
-        $result = $this->client->__call("xcall",
-            [$body], ["uri" => "urn:Api", "soapaction" => "urn:Api#xcall"]
-        );
+		$result = $this->client->__call(
+			"xcall",
+			array_merge([$body], ["uri" => "urn:Api", "soapaction" => "urn:Api#xcall"])
+		);
 
         return $result;
     }
