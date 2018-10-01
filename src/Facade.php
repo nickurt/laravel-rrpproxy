@@ -17,6 +17,9 @@ namespace nickurt\RrpProxy;
  * @method static \nickurt\RrpProxy\Api\NameServers nameservers()
  * @method static \nickurt\RrpProxy\Api\Queries queries()
  * @method static \nickurt\RrpProxy\Api\Servers servers()
+ * @method static \nickurt\RrpProxy\Api\Sms sms()
+ * @method static \nickurt\RrpProxy\Api\Trademarks trademarks()
+ * @method static \nickurt\RrpProxy\Api\Transfers transfers()
  */
 class Facade extends \Illuminate\Support\Facades\Facade
 {
