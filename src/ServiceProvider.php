@@ -5,11 +5,26 @@ namespace nickurt\RrpProxy;
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
-     * Indicates if loading of the provider is deferred.
+     * Bootstrap the application events.
      *
-     * @var bool
+     * @return void
      */
-    protected $defer = false;
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__ . '/../config/rrpproxy.php' => config_path('rrpproxy.php')
+        ], 'config');
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return ['nickurt\RrpProxy\RrpProxy', 'RrpProxy'];
+    }
 
     /**
      * Register the service provider.
@@ -26,27 +41,5 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         });
 
         $this->app->alias('nickurt\RrpProxy\RrpProxy', 'RrpProxy');
-    }
-
-    /**
-     * Bootstrap the application events.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        $this->publishes([
-            __DIR__.'/../config/rrpproxy.php' => config_path('rrpproxy.php')
-        ], 'config');
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return ['nickurt\RrpProxy\RrpProxy', 'RrpProxy'];
     }
 }
