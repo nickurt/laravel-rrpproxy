@@ -25,8 +25,43 @@ class SoapClient implements SoapClientInterface
             "style" => SOAP_RPC,
             "use" => SOAP_ENCODED
         ]));
+    }
 
-        $this->client = new \SoapClient(NULL, $this->getOptions());
+    /**
+     * @param $body
+     * @return mixed
+     */
+    public function request($body)
+    {
+        $result = $this->getClient()->__call(
+            "xcall",
+            array_merge([$body], ["uri" => "urn:Api", "soapaction" => "urn:Api#xcall"])
+        );
+
+        return $result;
+    }
+
+    /**
+     * @return \SoapClient
+     * @throws \SoapFault
+     */
+    public function getClient()
+    {
+        if (!isset($this->client)) {
+            $this->client = new \SoapClient(NULL, $this->getOptions());
+
+            return $this->client;
+        }
+
+        return $this->client;
+    }
+
+    /**
+     * @param \SoapClient $client
+     */
+    public function setClient(\SoapClient $client)
+    {
+        $this->client = $client;
     }
 
     /**
@@ -43,21 +78,5 @@ class SoapClient implements SoapClientInterface
     public function setOptions(array $options)
     {
         $this->options = array_merge($this->options, $options);
-    }
-
-    /**
-     * @param $body
-     * @return mixed
-     */
-    public function request($body)
-    {
-        $this->client->__setLocation($this->getOptions()['location']);
-
-        $result = $this->client->__call(
-            "xcall",
-            array_merge([$body], ["uri" => "urn:Api", "soapaction" => "urn:Api#xcall"])
-        );
-
-        return $result;
     }
 }
