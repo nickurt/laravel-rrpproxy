@@ -1,4 +1,9 @@
 ## Laravel RrpProxy
+[![Build Status](https://github.com/nickurt/laravel-rrpproxy/workflows/tests/badge.svg)](https://github.com/nickurt/laravel-rrpproxy/actions)
+[![Total Downloads](https://poser.pugx.org/nickurt/laravel-rrpproxy/d/total.svg)](https://packagist.org/packages/nickurt/laravel-plesk)
+[![Latest Stable Version](https://poser.pugx.org/nickurt/laravel-rrpproxy/v/stable.svg)](https://packagist.org/packages/nickurt/laravel-plesk)
+[![MIT Licensed](https://poser.pugx.org/nickurt/laravel-rrpproxy/license.svg)](LICENSE.md)
+
 ### Table of contents
 - [Installation](#installation)
 - [Usage](#usage)
