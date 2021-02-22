@@ -1,6 +1,6 @@
 <?php
 
-namespace nickurt\RrpProxy\SoapCLient;
+namespace nickurt\RrpProxy\SoapClient;
 
 interface SoapClientInterface
 {
